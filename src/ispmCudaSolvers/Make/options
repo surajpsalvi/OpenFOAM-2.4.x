@@ -1,0 +1,9 @@
+ifdef FOAM_DEV
+FOAM_DEV_OPTION = -DFOAM_DEV
+endif
+
+EXE_INC = \
+    -I$(ISPM_DIR) -isystem $(CUDA_INCLUDE_DIR) $(FOAM_DEV_OPTION)
+
+LIB_LIBS = \
+    -L$(ISPM_DIR) -lispm0-pic -L$(CUDA_LIB_DIR) -lcudart

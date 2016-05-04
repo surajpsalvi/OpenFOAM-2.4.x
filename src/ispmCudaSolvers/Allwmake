@@ -1,0 +1,26 @@
+#!/bin/bash
+cd ${0%/*} || exit 1    # run from this directory
+
+if [ ! -f $CUDA_BIN_DIR/nvcc ]
+then
+    echo "No nvcc - CUDA not available."
+    exit 0
+fi
+
+if [ -n "$CUDA_IGNORE" ]
+then
+    echo "Found nvcc but \$CUDA_IGNORE set -- not  enabling CUDA support."
+    exit 0
+else
+    echo "Found nvcc  --  enabling CUDA support."
+fi
+
+if [ ! -f "$ISPM_DIR"/libispm0-pic.a ]
+then
+    echo "ISPM library not available"
+    exit 0
+fi
+
+wmake libso
+
+# ----------------------------------------------------------------- end-of-file

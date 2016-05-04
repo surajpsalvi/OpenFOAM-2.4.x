@@ -1,0 +1,19 @@
+This is GPU (CUDA) solver code from ISP RAS.  It aims to provide a
+highly optimized implementation.
+
+For now, only Preconditioned Conjugate Gradient with Approximate
+Inverse preconditioner is provided.  The name of the solver to use
+in fvSolution is "GPUPCG".  To make it available, load the library
+in controlDict:
+
+libs ("libispmCudaSolvers.so");
+
+
+Components that can have little or no connection to foam-extend are
+maintained separately at https://github.com/amonakov/ispm-sparse-lib
+
+The above library needs to be built first, and ISPM_DIR environment
+variable must point to its location.
+
+Questions and feedback: please contact:
+Alexander Monakov  <amonakov@ispras.ru>

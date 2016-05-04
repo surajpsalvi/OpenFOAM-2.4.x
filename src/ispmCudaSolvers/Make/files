@@ -1,0 +1,8 @@
+GPUPCG/GPUPCG.C
+lduMatrixConversion/lduMatrixConversion.C
+AsyncPrecondProvider/AsyncPrecondProvider.C
+GPUSolverData/GPUSolverData.C
+solverPersistentData/solverPersistentDataName.C
+solverPersistentData/solverPersistentData.C
+
+LIB = $(FOAM_LIBBIN)/libispmCudaSolvers
